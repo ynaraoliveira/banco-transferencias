@@ -16,11 +16,19 @@ public class Conta {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
+	
 	private String nome;
+	
 	private String documento;
+	
 	private String conta;
+	
+	@OneToOne
 	private Banco banco;
+	
 	private double saldoDebito;
+	
+	@OneToMany
 	private List<Transferencia> transferencias;
 	
 	public Conta(String nome, String documento, String conta, Banco banco, double saldoDebito, double saldoCredito) {
